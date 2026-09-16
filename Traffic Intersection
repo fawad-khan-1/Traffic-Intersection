@@ -1,0 +1,19 @@
+#include<stdint.h>
+#include<stdbool>
+#include "inc/hw_memmap.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/gpio.h"
+
+#define REDLED1_PORT    GPIO_PORTB_BASE  //N-S red on Port B, pin 0
+#define REDLED1_PIN     GPIO_PIN_0
+#define YELLOWLED1_PORT    GPIO_PORTB_BASE  //N-S yellow on Port B, pin 1
+#define YELLOWLED1_PIN     GPIO_PIN_1
+#define GREENLED1_PORT    GPIO_PORTB_BASE  //N-S green on Port B, pin 2
+#define GREENLED1_PIN     GPIO_PIN_2
+#define REDLED2_PORT    GPIO_PORTB_BASE  //E-W red on Port B, pin 3
+#define REDLED2_PIN     GPIO_PIN_3
+#define YELLOW2_PORT    GPIO_PORTB_BASE  //E-W yellow on Port B, pin 4
+#define YELLOW2_PIN     GPIO_PIN_4
+#define GREENLED2_PORT    GPIO_PORTB_BASE  //E-W green on Port B, pin 5
+#define GREENLED2_PIN     GPIO_PIN_5
+
