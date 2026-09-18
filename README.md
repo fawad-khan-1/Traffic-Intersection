@@ -10,20 +10,6 @@ The system controls traffic lights for north-south and east-west traffic as well
 
 The project was implemented in Keil MDK and programmed onto a physical TM4C123G LaunchPad. LEDs connected on a breadboard were used to represent the traffic signals.
 
-## Original Arduino Version
-
-This project is a port of an earlier traffic intersection controller that I originally developed for the Arduino Uno as part of a university embedded systems course.
-
-The original Arduino implementation controls north-south traffic, east-west traffic, and a pedestrian crossing using LEDs and push-button inputs.
-
-For this project, I ported the original design to the Texas Instruments TM4C123G LaunchPad. The traffic-control behavior was preserved while the Arduino-specific I/O was replaced with TM4C123G GPIO control using the TivaWare Driver Library.
-
-Both versions were implemented and tested on physical hardware.
-
-Original Arduino version:
-
-[Arduino Traffic Intersection](PASTE-ARDUINO-GITHUB-URL-HERE)
-
 ## System Operation
 
 The intersection contains three controlled traffic paths:
@@ -88,6 +74,20 @@ The primary application source code is contained in:
 `main.c`
 
 The repository also contains the Keil project configuration required to open and build the project.
+
+## Original Arduino Version
+
+This project is a port of an earlier traffic intersection controller that I originally developed for the Arduino Uno as part of a university embedded systems course.
+
+The original Arduino implementation controls north-south traffic, east-west traffic, and a pedestrian crossing using LEDs and push-button inputs.
+
+For this project, I ported the original design to the Texas Instruments TM4C123G LaunchPad. The traffic-control behavior was preserved while the Arduino-specific I/O was replaced with TM4C123G GPIO control using the TivaWare Driver Library.
+
+Both versions were implemented and tested on physical hardware.
+
+Original Arduino version:
+
+[Arduino Traffic Intersection](https://github.com/fawad-khan-1/TrafficLightEET3350)
 
 ## Screenshots and Hardware
 
