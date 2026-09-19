@@ -1,80 +1,117 @@
-# Traffic Intersection
-Traffic intersection controller implemented in C on a TI TM4C123G microcontroller using TivaWare.
 # TM4C123G Traffic Intersection Controller
 
-## Overview
+This project implements a traffic intersection controller using the Texas Instruments TM4C123G LaunchPad.
 
-This project implements a traffic intersection control system on a Texas Instruments TM4C123G LaunchPad using C and the TivaWare Driver Library.
+The project is a port of an earlier Arduino Uno traffic intersection controller that I originally developed as part of a university embedded systems course. The original traffic-control behavior was preserved while the hardware interface was rewritten for the TM4C123G platform.
 
-The system controls traffic lights for north-south and east-west traffic as well as a pedestrian crossing. Push buttons connected to the microcontroller are used to simulate traffic and pedestrian requests.
+The completed controller was compiled, programmed onto the TM4C123G, and tested successfully on physical hardware.
 
-The project was implemented in Keil MDK and programmed onto a physical TM4C123G LaunchPad. LEDs connected on a breadboard were used to represent the traffic signals.
+## Project Features
+
+- TM4C123G ARM Cortex-M4F microcontroller
+- Embedded C programming
+- TivaWare Driver Library
+- GPIO input and output control
+- North-south traffic-light sequence
+- East-west traffic-light sequence
+- Pedestrian crossing sequence
+- Push-button traffic and pedestrian inputs
+- LED traffic-light outputs
+- Physical breadboard implementation
+- Hardware testing and debugging
 
 ## System Operation
 
-The intersection contains three controlled traffic paths:
+The controller monitors push-button inputs representing traffic and pedestrian requests.
 
-- North-South traffic
-- East-West traffic
+The system supports three primary operating sequences:
+
+- North-south traffic
+- East-west traffic
 - Pedestrian crossing
 
-Three push-button inputs are used to request changes in the traffic signals:
+Based on the detected input, the program executes the appropriate traffic sequence and controls the corresponding LEDs connected to the TM4C123G.
 
-- North-South traffic request
-- East-West traffic request
-- Pedestrian crossing request
+The traffic-control logic is organized around three primary functions:
 
-The controller evaluates the input states and changes the traffic signals according to the programmed intersection sequence.
+- `NSTraffic()` – controls the north-south traffic sequence
+- `EWTraffic()` – controls the east-west traffic sequence
+- `PedCrossWalk()` – controls the pedestrian crossing sequence
 
-## Software Design
+## Hardware
 
-The program is written in C and separates the major traffic-control operations into functions:
-
-- `NSTraffic()` – controls the North-South traffic sequence.
-- `EWTraffic()` – controls the East-West traffic sequence.
-- `PedCrossWalk()` – controls the pedestrian crossing sequence.
-
-The main program continuously reads the three input signals and determines which traffic-control sequence should execute.
-
-## Hardware and Software
+The physical implementation uses:
 
 - Texas Instruments TM4C123G LaunchPad
-- ARM Cortex-M4F microcontroller
-- C
-- TivaWare Driver Library
-- Keil MDK
-- TI UniFlash
 - Breadboard
 - LEDs
 - Push buttons
+- Resistors
+- Jumper wires
 
-## GPIO Control
+The completed circuit was assembled and tested on physical hardware.
 
-The project uses TivaWare GPIO functions rather than directly manipulating hardware registers. GPIO ports are configured for the traffic-light outputs and push-button inputs.
+## Software and Tools
 
-The software uses TivaWare functions for:
+- Embedded C
+- TM4C123G / Tiva C Series
+- TivaWare Driver Library
+- Keil MDK
+- UniFlash
 
-- Enabling GPIO peripherals
-- Configuring GPIO pins as inputs and outputs
-- Reading push-button states
-- Controlling traffic-light LEDs
+Keil MDK was used to build the embedded application, and Texas Instruments UniFlash was used to program the compiled application onto the TM4C123G LaunchPad.
 
-## Testing
+## GPIO Implementation
 
-The program was compiled in Keil MDK and programmed onto the TM4C123G using TI UniFlash.
+The TM4C123G version replaces the Arduino-specific hardware interface with GPIO control appropriate for the TM4C123G.
 
-The completed system was tested on physical hardware using LEDs to represent the traffic signals and push buttons to simulate traffic and pedestrian requests.
+The program uses the TivaWare Driver Library to configure and interact with the microcontroller's GPIO peripherals.
 
-Multiple input sequences were tested to verify that signal transitions occurred in response to button inputs and that the traffic lights remained stable when no new request was present.
+The traffic-light LEDs are controlled through GPIO outputs, while the traffic and pedestrian push buttons are monitored through GPIO inputs.
 
-## Source Code
+## Original Arduino Version
 
-The primary application source code is contained in:
+This project is a port of an earlier traffic intersection controller that I originally developed for the Arduino Uno as part of a university embedded systems course.
 
-`main.c`
+The original Arduino implementation controls north-south traffic, east-west traffic, and a pedestrian crossing using LEDs and push-button inputs.
 
-The repository also contains the Keil project configuration required to open and build the project.
+For this project, I ported the original design to the Texas Instruments TM4C123G LaunchPad. The traffic-control behavior was preserved while the Arduino-specific I/O was replaced with TM4C123G GPIO control using the TivaWare Driver Library.
 
+Both versions were implemented and tested on physical hardware.
+
+Original Arduino version:
+
+[Arduino Traffic Intersection](https://github.com/fawad-khan-1/TrafficLightEET3350)
+
+## Hardware Demonstration
+
+A video demonstration of the completed TM4C123G implementation is included in this repository.
+
+The video shows the traffic intersection controller operating on the physical TM4C123G LaunchPad and breadboard hardware, including the traffic-light sequences and response to the input buttons.
+
+[View the TM4C123G Traffic Intersection Demonstration](demo/TM4C123GTrafficController-Demo.mp4)
+
+## Project Background
+
+The original traffic intersection controller was developed using an Arduino Uno.
+
+I later revisited the project and ported the design to the TM4C123G LaunchPad. This required adapting the hardware interface and GPIO implementation to a different microcontroller platform while preserving the original traffic-control behavior.
+
+The completed TM4C123G version was compiled, flashed to the microcontroller, and tested repeatedly on physical hardware.
+
+## Project Purpose
+
+This project demonstrates experience with:
+
+- Embedded C programming
+- ARM-based microcontrollers
+- GPIO configuration and control
+- Embedded hardware/software integration
+- Microcontroller peripheral libraries
+- Breadboard prototyping
+- Hardware testing
+- Debugging embedded systems
+- Porting an embedded application between microcontroller platforms
 ## Original Arduino Version
 
 This project is a port of an earlier traffic intersection controller that I originally developed for the Arduino Uno as part of a university embedded systems course.
