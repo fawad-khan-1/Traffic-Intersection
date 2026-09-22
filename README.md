@@ -2,9 +2,13 @@
 
 This project implements a traffic intersection controller using the Texas Instruments TM4C123G LaunchPad.
 
-The project is a port of an earlier Arduino Uno traffic intersection controller that I originally developed as part of a university embedded systems course. The original traffic-control behavior was preserved while the hardware interface was rewritten for the TM4C123G platform.
+The traffic intersection was originally developed as an assigned university embedded-systems laboratory project using the TM4C123G. The original implementation controlled the microcontroller hardware directly using registers and hexadecimal register values.
 
-The completed controller was compiled, programmed onto the TM4C123G, and tested successfully on physical hardware.
+I later ported the traffic controller to an Arduino Uno.
+
+I recently returned to the original TM4C123G project and reimplemented it using the TivaWare Driver Library instead of the direct register-level programming approach used in the original class project.
+
+The completed TivaWare version was compiled, programmed onto the TM4C123G LaunchPad, and successfully tested on physical hardware.
 
 ## Project Features
 
@@ -57,47 +61,51 @@ The completed circuit was assembled and tested on physical hardware.
 - TM4C123G / Tiva C Series
 - TivaWare Driver Library
 - Keil MDK
-- UniFlash
+- Texas Instruments UniFlash
 
-Keil MDK was used to build the embedded application, and Texas Instruments UniFlash was used to program the compiled application onto the TM4C123G LaunchPad.
+Keil MDK was used to build the current implementation, and Texas Instruments UniFlash was used to program the application onto the TM4C123G LaunchPad.
 
-## GPIO Implementation
+## TivaWare Reimplementation
 
-The TM4C123G version replaces the Arduino-specific hardware interface with GPIO control appropriate for the TM4C123G.
+The original university version of this project used direct register-level programming and hexadecimal register values to configure and control the TM4C123G hardware.
 
-The program uses the TivaWare Driver Library to configure and interact with the microcontroller's GPIO peripherals.
+For the current version, I returned to the original project and reimplemented the hardware interface using the TivaWare Driver Library.
 
-The traffic-light LEDs are controlled through GPIO outputs, while the traffic and pedestrian push buttons are monitored through GPIO inputs.
+TivaWare functions are used to configure and interact with the TM4C123G GPIO peripherals while preserving the traffic-control behavior of the original project.
 
-## Original Arduino Version
+This provided an opportunity to revisit an earlier embedded-systems project using a different programming approach and current development tools.
 
-This project is a port of an earlier traffic intersection controller that I originally developed for the Arduino Uno as part of a university embedded systems course.
+## Arduino Port
 
-The original Arduino implementation controls north-south traffic, east-west traffic, and a pedestrian crossing using LEDs and push-button inputs.
+After completing the original register-based TM4C123G project, I later ported the traffic controller to an Arduino Uno.
 
-For this project, I ported the original design to the Texas Instruments TM4C123G LaunchPad. The traffic-control behavior was preserved while the Arduino-specific I/O was replaced with TM4C123G GPIO control using the TivaWare Driver Library.
+The Arduino version implements the same general traffic-intersection concept using the Arduino platform.
 
-Both versions were implemented and tested on physical hardware.
-
-Original Arduino version:
+Arduino version:
 
 [Arduino Traffic Intersection](https://github.com/fawad-khan-1/TrafficLightEET3350)
 
 ## Hardware Demonstration
 
-A video demonstration of the completed TM4C123G implementation is included in this repository.
+A video demonstration of the completed TivaWare implementation is included in this repository.
 
 The video shows the traffic intersection controller operating on the physical TM4C123G LaunchPad and breadboard hardware, including the traffic-light sequences and response to the input buttons.
 
 [Open the TM4C123G Traffic Intersection Demonstration](demo/Tm4c123gtrafficcontroller-Demo3.mp4)
 
-> If GitHub does not display the video in its file preview, select **View raw** to open the video file. 
+> If GitHub does not display the video in its file preview, select **View raw** to open the video file.
 
-## Project Background
+## Project History
 
-This original project was done as an assigned lab project for my Embedded Systems class offered by my university as a required undergraduate engineering course. It provided a hands-on experience with microcontroller programming, digital inputs and outputs, traffic-control sequencing, breadboard circuit construction, and testing embedded software on physical hardware using the Texas Instruments, TM4C123G microcontroller on Tiva Launchpad.
+This project has gone through three major stages:
 
-Revisiting the project later by porting it to an Arduino  provided me with an opportunity to implement the same control system on a different embedded platform.
+1. **Original TM4C123G implementation** – Developed as an assigned university embedded-systems laboratory project using direct register-level programming and hexadecimal register values.
+
+2. **Arduino port** – The original traffic-controller concept was later ported to the Arduino Uno.
+
+3. **TivaWare TM4C123G reimplementation** – I recently returned to the TM4C123G and rebuilt the project using the TivaWare Driver Library and current development tools.
+
+The current repository contains the TivaWare-based TM4C123G implementation.
 
 ## Project Purpose
 
@@ -107,18 +115,9 @@ This project demonstrates experience with:
 - ARM-based microcontrollers
 - GPIO configuration and control
 - Embedded hardware/software integration
-- Microcontroller peripheral libraries
+- TivaWare Driver Library
 - Breadboard prototyping
 - Hardware testing
 - Debugging embedded systems
-- Porting an embedded application between microcontroller platforms
-## Ported Arduino Version
-
-This project was later ported to an Arduino Uno microcontroller.
-
-Both versions were implemented and tested on physical hardware.
-
-The ported Arduino version can be seen on the Arduino repository page by clicking the following link:
-
-[Arduino Traffic Intersection](https://github.com/fawad-khan-1/TrafficLightEET3350)
-
+- Revisiting and modernizing an earlier embedded project
+- Porting embedded control logic between microcontroller platforms
