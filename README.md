@@ -95,9 +95,9 @@ The video shows the traffic intersection controller operating on the physical TM
 
 ## Project Background
 
-This original project was done as an assigned lab project for my Embedded Systems class as an undergraduate engineering student. It provided a hands-on experience with microcontroller programming, digital inputs and outputs, traffic-control sequencing, breadboard circuit construction, and testing embedded software on physical hardware using the Texas Instruments, TM4C123G microcontroller on Tiva LAunchpad.
+This original project was done as an assigned lab project for my Embedded Systems class offered by my university as a required undergraduate engineering course. It provided a hands-on experience with microcontroller programming, digital inputs and outputs, traffic-control sequencing, breadboard circuit construction, and testing embedded software on physical hardware using the Texas Instruments, TM4C123G microcontroller on Tiva Launchpad.
 
-Revisiting the project later by porting it to an Arduino  provided an opportunity to implement the same control system on a different embedded platform.
+Revisiting the project later by porting it to an Arduino  provided me with an opportunity to implement the same control system on a different embedded platform.
 
 ## Project Purpose
 
@@ -118,10 +118,7 @@ This project was later ported to an Arduino Uno microcontroller.
 
 Both versions were implemented and tested on physical hardware.
 
-Ported Arduino version:
+The ported Arduino version can be seen on the Arduino repository page by clicking the following link:
 
 [Arduino Traffic Intersection](https://github.com/fawad-khan-1/TrafficLightEET3350)
 
-## Screenshots and Hardware
-
-Screenshots of the source code and photographs of the physical TM4C123G traffic intersection setup will be included in the `screenshots` directory.
