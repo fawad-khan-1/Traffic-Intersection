@@ -95,11 +95,9 @@ The video shows the traffic intersection controller operating on the physical TM
 
 ## Project Background
 
-The original traffic intersection controller was developed using an Arduino Uno.
+This original project was done as an assigned lab project for my Embedded Systems class as an undergraduate engineering student. It provided a hands-on experience with microcontroller programming, digital inputs and outputs, traffic-control sequencing, breadboard circuit construction, and testing embedded software on physical hardware using the Texas Instruments, TM4C123G microcontroller on Tiva LAunchpad.
 
-I later revisited the project and ported the design to the TM4C123G LaunchPad. This required adapting the hardware interface and GPIO implementation to a different microcontroller platform while preserving the original traffic-control behavior.
-
-The completed TM4C123G version was compiled, flashed to the microcontroller, and tested repeatedly on physical hardware.
+Revisiting the project later by porting it to an Arduino  provided an opportunity to implement the same control system on a different embedded platform.
 
 ## Project Purpose
 
@@ -114,17 +112,13 @@ This project demonstrates experience with:
 - Hardware testing
 - Debugging embedded systems
 - Porting an embedded application between microcontroller platforms
-## Original Arduino Version
+## Ported Arduino Version
 
-This project is a port of an earlier traffic intersection controller that I originally developed for the Arduino Uno as part of a university embedded systems course.
-
-The original Arduino implementation controls north-south traffic, east-west traffic, and a pedestrian crossing using LEDs and push-button inputs.
-
-For this project, I ported the original design to the Texas Instruments TM4C123G LaunchPad. The traffic-control behavior was preserved while the Arduino-specific I/O was replaced with TM4C123G GPIO control using the TivaWare Driver Library.
+This project was later ported to an Arduino Uno microcontroller.
 
 Both versions were implemented and tested on physical hardware.
 
-Original Arduino version:
+Ported Arduino version:
 
 [Arduino Traffic Intersection](https://github.com/fawad-khan-1/TrafficLightEET3350)
 
